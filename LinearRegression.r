@@ -11,6 +11,7 @@ dim(dat)
 n=nrow(dat)
 n
 
+set.seed(905)
 #Train-Test split using sample method.
 i.train <- sample(1:n, 0.8*n, replace = FALSE)
 
@@ -52,11 +53,11 @@ cbind(observed,score_predicted)
 #Predicitng the Percentage for hours of study = 9.25
 newd <- data.frame(Hours = 9.25)
 predict(linear_model,newd, type = "response")
-
-#The predicted percentage would be ~ 93.32.
+#The predicted percentage would be ~ 93.91.
 
 #MSE
 mean(linear_model$residuals^2)
 
 #RMSE
 sqrt(mean(linear_model$residuals^2))
+
